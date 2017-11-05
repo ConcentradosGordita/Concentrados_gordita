@@ -1,5 +1,5 @@
 
-package claseslagordita;
+package modelo;
 /*
 (id_cliente int primary key,
 nombre_cliente varchar(60) not null,

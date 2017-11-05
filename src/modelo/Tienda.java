@@ -1,5 +1,5 @@
 
-package claseslagordita;
+package modelo;
 /**
  *
  * @author kamt
