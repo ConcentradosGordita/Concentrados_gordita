@@ -15,19 +15,12 @@ public class Empleados {
     private String nombre_emp;
     private String apellido_emp;
     private String cargo_emp;
-    private float salario;
+    private double salario;
     private String telefono;
     private int id_sucursal;
-
-    public Empleados(int id_empleado, String nombre_emp, String apellido_emp, String cargo_emp, float salario, String telefono, int id_sucursal) {
-        this.id_empleado = id_empleado;
-        this.nombre_emp = nombre_emp;
-        this.apellido_emp = apellido_emp;
-        this.cargo_emp = cargo_emp;
-        this.salario = salario;
-        this.telefono = telefono;
-        this.id_sucursal = id_sucursal;
-    }
+    private String nombre_us ;
+    private String cod_us;
+    private int nivel_us ;
 
     public int getId_empleado() {
         return id_empleado;
@@ -61,11 +54,11 @@ public class Empleados {
         this.cargo_emp = cargo_emp;
     }
 
-    public float getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 
@@ -85,14 +78,49 @@ public class Empleados {
         this.id_sucursal = id_sucursal;
     }
 
+    public String getNombre_us() {
+        return nombre_us;
+    }
+
+    public void setNombre_us(String nombre_us) {
+        this.nombre_us = nombre_us;
+    }
+
+    public String getCod_us() {
+        return cod_us;
+    }
+
+    public void setCod_us(String cod_us) {
+        this.cod_us = cod_us;
+    }
+
+    public int getNivel_us() {
+        return nivel_us;
+    }
+
+    public void setNivel_us(int nivel_us) {
+        this.nivel_us = nivel_us;
+    }
+
     public Empleados() {
+    }
+
+    public Empleados(int id_empleado, String nombre_emp, String apellido_emp, String cargo_emp, double salario, String telefono, int id_sucursal, String nombre_us, String cod_us, int nivel_us) {
+        this.id_empleado = id_empleado;
+        this.nombre_emp = nombre_emp;
+        this.apellido_emp = apellido_emp;
+        this.cargo_emp = cargo_emp;
+        this.salario = salario;
+        this.telefono = telefono;
+        this.id_sucursal = id_sucursal;
+        this.nombre_us = nombre_us;
+        this.cod_us = cod_us;
+        this.nivel_us = nivel_us;
     }
 
     @Override
     public String toString() {
-        return "Empleados{" + "id_empleado=" + id_empleado + ", nombre_emp=" + nombre_emp + ", apellido_emp=" + apellido_emp + ", cargo_emp=" + cargo_emp + ", salario=" + salario + ", telefono=" + telefono + ", id_sucursal=" + id_sucursal + '}';
+        return "Empleados{" + "id_empleado=" + id_empleado + ", nombre_emp=" + nombre_emp + ", apellido_emp=" + apellido_emp + ", cargo_emp=" + cargo_emp + ", salario=" + salario + ", telefono=" + telefono + ", id_sucursal=" + id_sucursal + ", nombre_us=" + nombre_us + ", cod_us=" + cod_us + ", nivel_us=" + nivel_us + '}';
     }
-    
-    
     
 }

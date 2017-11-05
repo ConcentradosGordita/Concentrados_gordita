@@ -13,29 +13,15 @@ package modelo;
 public class Ventas {
     private int num_venta;
     private String nombre_prod;
-    private float precio_prod;
+    private double precio_prod;
     private int cantidad_prod;
     private String forma_pago;
     private float impuesto_IVA;
-    private String descuento;
+    private double descuento;
     private int id_cliente;
     private int id_empleado;
     private int id_producto;
     private int id_fact;
-
-    public Ventas(int num_venta, String nombre_prod, float precio_prod, int cantidad_prod, String forma_pago, float impuesto_IVA, String descuento, int id_cliente, int id_empleado, int id_producto, int id_fact) {
-        this.num_venta = num_venta;
-        this.nombre_prod = nombre_prod;
-        this.precio_prod = precio_prod;
-        this.cantidad_prod = cantidad_prod;
-        this.forma_pago = forma_pago;
-        this.impuesto_IVA = impuesto_IVA;
-        this.descuento = descuento;
-        this.id_cliente = id_cliente;
-        this.id_empleado = id_empleado;
-        this.id_producto = id_producto;
-        this.id_fact = id_fact;
-    }
 
     public int getNum_venta() {
         return num_venta;
@@ -53,11 +39,11 @@ public class Ventas {
         this.nombre_prod = nombre_prod;
     }
 
-    public float getPrecio_prod() {
+    public double getPrecio_prod() {
         return precio_prod;
     }
 
-    public void setPrecio_prod(float precio_prod) {
+    public void setPrecio_prod(double precio_prod) {
         this.precio_prod = precio_prod;
     }
 
@@ -85,11 +71,11 @@ public class Ventas {
         this.impuesto_IVA = impuesto_IVA;
     }
 
-    public String getDescuento() {
+    public double getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(String descuento) {
+    public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
 
@@ -128,10 +114,25 @@ public class Ventas {
     public Ventas() {
     }
 
+    public Ventas(int num_venta, String nombre_prod, double precio_prod, int cantidad_prod, String forma_pago, float impuesto_IVA, double descuento, int id_cliente, int id_empleado, int id_producto, int id_fact) {
+        this.num_venta = num_venta;
+        this.nombre_prod = nombre_prod;
+        this.precio_prod = precio_prod;
+        this.cantidad_prod = cantidad_prod;
+        this.forma_pago = forma_pago;
+        this.impuesto_IVA = impuesto_IVA;
+        this.descuento = descuento;
+        this.id_cliente = id_cliente;
+        this.id_empleado = id_empleado;
+        this.id_producto = id_producto;
+        this.id_fact = id_fact;
+    }
+
     @Override
     public String toString() {
         return "Ventas{" + "num_venta=" + num_venta + ", nombre_prod=" + nombre_prod + ", precio_prod=" + precio_prod + ", cantidad_prod=" + cantidad_prod + ", forma_pago=" + forma_pago + ", impuesto_IVA=" + impuesto_IVA + ", descuento=" + descuento + ", id_cliente=" + id_cliente + ", id_empleado=" + id_empleado + ", id_producto=" + id_producto + ", id_fact=" + id_fact + '}';
     }
+
     
     
     

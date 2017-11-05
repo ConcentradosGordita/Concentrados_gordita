@@ -18,24 +18,11 @@ public class Producto {
     private String fecha_lab;
     private String fecha_venc;
     private int cod_barras;
-    private float precio_prod;
+    private double precio_prod;
     private int unidades_exsistencias;
     private  String id_proveedor;
     private  String id_categoria;
     private int id_marca;
-
-    public Producto(int id_producto, String nombre_prod, String fecha_lab, String fecha_venc, int cod_barras, float precio_prod, int unidades_exsistencias, String id_proveedor, String id_categoria, int id_marca) {
-        this.id_producto = id_producto;
-        this.nombre_prod = nombre_prod;
-        this.fecha_lab = fecha_lab;
-        this.fecha_venc = fecha_venc;
-        this.cod_barras = cod_barras;
-        this.precio_prod = precio_prod;
-        this.unidades_exsistencias = unidades_exsistencias;
-        this.id_proveedor = id_proveedor;
-        this.id_categoria = id_categoria;
-        this.id_marca = id_marca;
-    }
 
     public int getId_producto() {
         return id_producto;
@@ -77,11 +64,11 @@ public class Producto {
         this.cod_barras = cod_barras;
     }
 
-    public float getPrecio_prod() {
+    public double getPrecio_prod() {
         return precio_prod;
     }
 
-    public void setPrecio_prod(float precio_prod) {
+    public void setPrecio_prod(double precio_prod) {
         this.precio_prod = precio_prod;
     }
 
@@ -120,11 +107,24 @@ public class Producto {
     public Producto() {
     }
 
+    public Producto(int id_producto, String nombre_prod, String fecha_lab, String fecha_venc, int cod_barras, double precio_prod, int unidades_exsistencias, String id_proveedor, String id_categoria, int id_marca) {
+        this.id_producto = id_producto;
+        this.nombre_prod = nombre_prod;
+        this.fecha_lab = fecha_lab;
+        this.fecha_venc = fecha_venc;
+        this.cod_barras = cod_barras;
+        this.precio_prod = precio_prod;
+        this.unidades_exsistencias = unidades_exsistencias;
+        this.id_proveedor = id_proveedor;
+        this.id_categoria = id_categoria;
+        this.id_marca = id_marca;
+    }
+
     @Override
     public String toString() {
         return "Producto{" + "id_producto=" + id_producto + ", nombre_prod=" + nombre_prod + ", fecha_lab=" + fecha_lab + ", fecha_venc=" + fecha_venc + ", cod_barras=" + cod_barras + ", precio_prod=" + precio_prod + ", unidades_exsistencias=" + unidades_exsistencias + ", id_proveedor=" + id_proveedor + ", id_categoria=" + id_categoria + ", id_marca=" + id_marca + '}';
     }
-    
+
     
     
     

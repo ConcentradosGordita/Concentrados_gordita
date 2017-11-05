@@ -59,7 +59,7 @@ public class Conexion {
     public Conexion() {
         
         driver ="com.mysql.jdbc.Driver";
-        db="";
+        db="lagordita";
         url="jdbc:mysql://localhost:3306/" + db;
         usuario = "pma";
         clave = "";
