@@ -341,7 +341,7 @@ public class InventarioTienda extends javax.swing.JFrame {
         
         if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
             
-        getToolkit().beep();
+        
            
         evt.consume();
        
