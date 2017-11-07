@@ -1,23 +1,22 @@
-package vista;
-
-import java.awt.event.KeyEvent;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package vista;
+
+import java.awt.event.KeyEvent;
 
 /**
  *
- * @author asus user
+ * @author kamt
  */
-public class Empleados extends javax.swing.JFrame {
+public class FrmEmpleados extends javax.swing.JFrame {
 
     /**
-     * Creates new form Proveedor
+     * Creates new form FrmEmpleados
      */
-    public Empleados() {
+    public FrmEmpleados() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -33,8 +32,6 @@ public class Empleados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -68,19 +65,6 @@ public class Empleados extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -447,72 +431,72 @@ public class Empleados extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodEmpladoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodEmpladoKeyTyped
-    Character hl = evt.getKeyChar();
-        
-if (!Character.isDigit(hl)) {
-            
-getToolkit().beep();
-            
-evt.consume();
-        
-}   
-    }//GEN-LAST:event_txtCodEmpladoKeyTyped
-
     private void txtCodEmpladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCodEmpladoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodEmpladoMouseClicked
-
-    private void txtNomEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomEmpleadoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomEmpleadoMouseClicked
 
     private void txtCodEmpladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodEmpladoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodEmpladoActionPerformed
 
+    private void txtCodEmpladoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodEmpladoKeyTyped
+        Character hl = evt.getKeyChar();
+
+        if (!Character.isDigit(hl)) {
+
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtCodEmpladoKeyTyped
+
+    private void txtNomEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomEmpleadoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomEmpleadoMouseClicked
+
     private void txtNomEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomEmpleadoKeyTyped
         Character hl = evt.getKeyChar();
-        
+
         if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
-            
-        getToolkit().beep();
-           
-        evt.consume();
-       
- }
-    }//GEN-LAST:event_txtNomEmpleadoKeyTyped
 
-    private void txtSalarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyTyped
-        Character hl = evt.getKeyChar();
-        
-        if (!Character.isDigit(hl)) {
-            
-        getToolkit().beep();
-            
-        evt.consume();
-        
+            getToolkit().beep();
+
+            evt.consume();
+
         }
-    }//GEN-LAST:event_txtSalarioKeyTyped
-
-    private void txtTelEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelEmpleadoKeyTyped
-       char c = evt.getKeyChar();
-        if (c<'0' || c>'9'){
-        
-        evt.consume();}
-    }//GEN-LAST:event_txtTelEmpleadoKeyTyped
+    }//GEN-LAST:event_txtNomEmpleadoKeyTyped
 
     private void txtApeEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApeEmpleadoKeyTyped
         Character hl = evt.getKeyChar();
-        
+
         if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
-            
-        getToolkit().beep();
-           
-        evt.consume();
-       
- }
+
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
     }//GEN-LAST:event_txtApeEmpleadoKeyTyped
+
+    private void txtTelEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelEmpleadoKeyTyped
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9'){
+
+            evt.consume();}
+    }//GEN-LAST:event_txtTelEmpleadoKeyTyped
+
+    private void txtSalarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyTyped
+        Character hl = evt.getKeyChar();
+
+        if (!Character.isDigit(hl)) {
+
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtSalarioKeyTyped
 
     private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
         // TODO add your handling code here:
@@ -543,21 +527,20 @@ evt.consume();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Empleados().setVisible(true);
+                new FrmEmpleados().setVisible(true);
             }
         });
     }
@@ -587,9 +570,7 @@ evt.consume();
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable tblEmplados;
     private javax.swing.JTextField txtApeEmpleado;
     private javax.swing.JTextField txtCodEmplado;

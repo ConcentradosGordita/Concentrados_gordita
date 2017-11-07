@@ -41,16 +41,16 @@ public class FrmCategoria extends javax.swing.JFrame {
         String[] columnas = {"Codigo","Nombre"};
         Object[] obj = new Object[2];
         DefaultTableModel modelo = new DefaultTableModel(null, columnas);
-       Categoria celular= new Categoria();
+       Categoria categoria= new Categoria();
         ControladoresCategoria control = new ControladoresCategoria();
         DecimalFormat formato = new DecimalFormat("####.00");
         ArrayList<Object> lista;
         try {
             lista= control.mostrarCategoria();
             for(Object objeto :lista){//objeto cambiar por obj si es que no funciona asi 
-            celular = (Categoria) objeto;
-            obj[0]= celular.getId_categoria();
-            obj[1]= celular.getDescripcion_categoria();
+            categoria = (Categoria) objeto;
+            obj[0]= categoria.getId_categoria();
+            obj[1]= categoria.getDescripcion_categoria();
             
             modelo.addRow(obj);
             }
@@ -59,6 +59,78 @@ public class FrmCategoria extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.toString(),"ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
+    public void modificar(){
+         Categoria categoria= new Categoria();
+         ControladoresCategoria control = new ControladoresCategoria();
+         try {
+         categoria.setId_categoria(this.txtCodCat.getText().trim());
+         categoria.setDescripcion_categoria(this.txtNomCat.getText().trim());
+         
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea modificar este registro del celular?", "Modificar",JOptionPane.YES_NO_OPTION);
+             if (resp == JOptionPane.OK_OPTION) {
+                 String mensaje = control.modificarCategoria(categoria);
+                 JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+                 this.mostrar();
+             }
+        } catch (Exception e) {
+       JOptionPane.showMessageDialog(this, e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+         
+    }//final del modificar
+    
+    public void agregar(){
+         Categoria categoria= new Categoria();
+         ControladoresCategoria control = new ControladoresCategoria();
+         try {
+         categoria.setId_categoria(this.txtCodCat.getText().trim());
+         categoria.setDescripcion_categoria(this.txtNomCat.getText().trim());
+         
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea agregar este registro a la tabla celular?", "Agregar",JOptionPane.YES_NO_OPTION);
+             if (resp == JOptionPane.OK_OPTION) {
+                 String mensaje = control.agregarCategoria(categoria);
+                 JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+                 this.mostrar();
+             }
+        } catch (Exception e) {
+       JOptionPane.showMessageDialog(this, e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+         
+    }//final del agregar
+        
+            public void eliminar(){
+         Categoria categoria= new Categoria();
+         ControladoresCategoria control = new ControladoresCategoria();
+         try {
+         categoria.setId_categoria(this.txtCodCat.getText().trim());
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea eliminar este registro?", "Eliminar",JOptionPane.YES_NO_OPTION);
+             if (resp == JOptionPane.OK_OPTION) {
+                 String mensaje = control.eliminarCategoria(categoria);
+                 JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+                 this.mostrar();
+             }
+        } catch (Exception e) {
+       JOptionPane.showMessageDialog(this, e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+         
+    }//final del eliminar
+            
+           public void limpiar(){
+               
+               this.txtCodCat.setText("");
+               this.txtNomCat.setText("");
+               
+               
+           /*
+               txtCodigo
+               txtMarca
+               txtModelo
+               cmbCelu
+               txtPrecio
+               
+               */
+           
+           } 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -109,6 +181,11 @@ public class FrmCategoria extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCategoriaMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tblCategoria);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -139,10 +216,25 @@ public class FrmCategoria extends javax.swing.JFrame {
         jLabel16.setText("Categoria");
 
         btnAgregar.setText("Agregar");
+        btnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarMouseClicked(evt);
+            }
+        });
 
         btnModificar.setText("Modificar");
+        btnModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnModificarMouseClicked(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEliminarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -293,6 +385,28 @@ public class FrmCategoria extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_txtNomCatKeyTyped
+
+    private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
+        this.agregar();
+        this.mostrar();
+        this.limpiar();
+    }//GEN-LAST:event_btnAgregarMouseClicked
+
+    private void btnModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseClicked
+       this.modificar();
+        this.mostrar();
+        this.limpiar();
+    }//GEN-LAST:event_btnModificarMouseClicked
+
+    private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
+       this.eliminar();
+       this.mostrar();
+       this.limpiar();
+    }//GEN-LAST:event_btnEliminarMouseClicked
+
+    private void tblCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCategoriaMouseClicked
+        this.llenarDatos();
+    }//GEN-LAST:event_tblCategoriaMouseClicked
 
     /**
      * @param args the command line arguments
