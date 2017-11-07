@@ -16,8 +16,8 @@ public class Ventas {
     private double precio_prod;
     private int cantidad_prod;
     private String forma_pago;
-    private float impuesto_IVA;
-    private double descuento;
+    private double impuesto_IVA;
+    private String descuento;
     private int id_cliente;
     private int id_empleado;
     private int id_producto;
@@ -63,19 +63,19 @@ public class Ventas {
         this.forma_pago = forma_pago;
     }
 
-    public float getImpuesto_IVA() {
+    public double getImpuesto_IVA() {
         return impuesto_IVA;
     }
 
-    public void setImpuesto_IVA(float impuesto_IVA) {
+    public void setImpuesto_IVA(double impuesto_IVA) {
         this.impuesto_IVA = impuesto_IVA;
     }
 
-    public double getDescuento() {
+    public String getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(double descuento) {
+    public void setDescuento(String descuento) {
         this.descuento = descuento;
     }
 
@@ -114,7 +114,7 @@ public class Ventas {
     public Ventas() {
     }
 
-    public Ventas(int num_venta, String nombre_prod, double precio_prod, int cantidad_prod, String forma_pago, float impuesto_IVA, double descuento, int id_cliente, int id_empleado, int id_producto, int id_fact) {
+    public Ventas(int num_venta, String nombre_prod, double precio_prod, int cantidad_prod, String forma_pago, double impuesto_IVA, String descuento, int id_cliente, int id_empleado, int id_producto, int id_fact) {
         this.num_venta = num_venta;
         this.nombre_prod = nombre_prod;
         this.precio_prod = precio_prod;
@@ -132,6 +132,8 @@ public class Ventas {
     public String toString() {
         return "Ventas{" + "num_venta=" + num_venta + ", nombre_prod=" + nombre_prod + ", precio_prod=" + precio_prod + ", cantidad_prod=" + cantidad_prod + ", forma_pago=" + forma_pago + ", impuesto_IVA=" + impuesto_IVA + ", descuento=" + descuento + ", id_cliente=" + id_cliente + ", id_empleado=" + id_empleado + ", id_producto=" + id_producto + ", id_fact=" + id_fact + '}';
     }
+
+    
 
     
     
