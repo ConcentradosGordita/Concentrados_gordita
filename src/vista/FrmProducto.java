@@ -1,23 +1,22 @@
-package vista;
-
-import java.awt.event.KeyEvent;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package vista;
+
+import java.awt.event.KeyEvent;
 
 /**
  *
- * @author asus user
+ * @author kamt
  */
-public class Producto extends javax.swing.JFrame {
+public class FrmProducto extends javax.swing.JFrame {
 
     /**
-     * Creates new form Proveedor
+     * Creates new form FrmProducto
      */
-    public Producto() {
+    public FrmProducto() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -33,8 +32,10 @@ public class Producto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -63,25 +64,57 @@ public class Producto extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBackground(new java.awt.Color(56, 87, 107));
+
+        jLabel2.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Producto");
+
+        jPanel7.setBackground(new java.awt.Color(51, 153, 255));
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/producto.png"))); // NOI18N
+        jButton9.setText("jButton9");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel2)
+                .addGap(37, 37, 37)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel2))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jPanel1.setBackground(new java.awt.Color(123, 178, 197));
 
@@ -340,55 +373,6 @@ public class Producto extends javax.swing.JFrame {
                         .addGap(29, 29, 29))))
         );
 
-        jPanel2.setBackground(new java.awt.Color(56, 87, 107));
-
-        jLabel2.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Producto");
-
-        jPanel7.setBackground(new java.awt.Color(51, 153, 255));
-
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/producto.png"))); // NOI18N
-        jButton9.setText("jButton9");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel2)
-                .addGap(37, 37, 37)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel2))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -413,81 +397,75 @@ public class Producto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodProdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodProdKeyTyped
-        char c = evt.getKeyChar();
-        if (c<'0' || c>'9'){
-        
-        evt.consume();}
-    }//GEN-LAST:event_txtCodProdKeyTyped
-
     private void txtCodProdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCodProdMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodProdMouseClicked
+
+    private void txtCodProdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodProdKeyTyped
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9'){
+
+            evt.consume();}
+    }//GEN-LAST:event_txtCodProdKeyTyped
 
     private void txtNombreProducMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreProducMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreProducMouseClicked
 
+    private void txtNombreProducKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreProducKeyTyped
+        Character hl = evt.getKeyChar();
+
+        if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
+
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+
+    }//GEN-LAST:event_txtNombreProducKeyTyped
+
+    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
+
+    }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void txtUnidExistenciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnidExistenciaKeyTyped
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9'){
+
+            evt.consume();}
+    }//GEN-LAST:event_txtUnidExistenciaKeyTyped
+
     private void txtCodBarraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodBarraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodBarraActionPerformed
 
-    private void txtNombreProducKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreProducKeyTyped
-      Character hl = evt.getKeyChar();
-        
-        if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
-            
-        getToolkit().beep();
-           
-        evt.consume();
-       
-    } 
-        
-        
-        
-        
-    }//GEN-LAST:event_txtNombreProducKeyTyped
-
     private void txtCodBarraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodBarraKeyTyped
-       char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (c<'0' || c>'9'){
-        
-        evt.consume();}
+
+            evt.consume();}
     }//GEN-LAST:event_txtCodBarraKeyTyped
-
-    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
-        
-        
-        
-        
-    }//GEN-LAST:event_txtPrecioKeyTyped
-
-    private void txtUnidExistenciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnidExistenciaKeyTyped
-       char c = evt.getKeyChar();
-        if (c<'0' || c>'9'){
-        
-        evt.consume();}
-    }//GEN-LAST:event_txtUnidExistenciaKeyTyped
 
     private void txtCodProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodProveedorKeyTyped
         char c = evt.getKeyChar();
         if (c<'0' || c>'9'){
-        
-        evt.consume();}
+
+            evt.consume();}
     }//GEN-LAST:event_txtCodProveedorKeyTyped
 
     private void txtCodCategoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodCategoriaKeyTyped
-       char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (c<'0' || c>'9'){
-        
-        evt.consume();}
+
+            evt.consume();}
     }//GEN-LAST:event_txtCodCategoriaKeyTyped
 
     private void txtCodMarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodMarcaKeyTyped
         char c = evt.getKeyChar();
         if (c<'0' || c>'9'){
-        
-        evt.consume();}
+
+            evt.consume();}
     }//GEN-LAST:event_txtCodMarcaKeyTyped
 
     /**
@@ -507,23 +485,20 @@ public class Producto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Producto().setVisible(true);
+                new FrmProducto().setVisible(true);
             }
         });
     }
@@ -549,9 +524,7 @@ public class Producto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable tblProducto;
     private javax.swing.JTextField txtCodBarra;
     private javax.swing.JTextField txtCodCategoria;

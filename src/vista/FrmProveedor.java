@@ -1,24 +1,26 @@
-package vista;
-
-import java.awt.event.KeyEvent;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package vista;
+
+import java.awt.event.KeyEvent;
 
 /**
  *
- * @author asus user
+ * @author kamt
  */
-public class Proveedor extends javax.swing.JFrame {
+public class FrmProveedor extends javax.swing.JFrame {
 
     /**
-     * Creates new form Proveedor
+     * Creates new form FrmProveedor
      */
-    public Proveedor() {
+    public FrmProveedor() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Proveedor");
     }
 
     /**
@@ -30,8 +32,9 @@ public class Proveedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -48,24 +51,38 @@ public class Proveedor extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBackground(new java.awt.Color(56, 87, 107));
+
+        jLabel2.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Registro Proveedor");
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro.jpg"))); // NOI18N
+        jButton2.setText("jButton2");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 497, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         jPanel1.setBackground(new java.awt.Color(123, 178, 197));
 
@@ -218,36 +235,6 @@ public class Proveedor extends javax.swing.JFrame {
                                 .addContainerGap(413, Short.MAX_VALUE))))))
         );
 
-        jPanel2.setBackground(new java.awt.Color(56, 87, 107));
-
-        jLabel2.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Registro Proveedor");
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro.jpg"))); // NOI18N
-        jButton2.setText("jButton2");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 497, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -269,61 +256,56 @@ public class Proveedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCodProveKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodProveKeyTyped
-        
+
         Character hl = evt.getKeyChar();
-        
-            if (!Character.isDigit(hl)) {
-            
-                getToolkit().beep();
-            
-                evt.consume();
-        
+
+        if (!Character.isDigit(hl)) {
+
+            getToolkit().beep();
+
+            evt.consume();
+
         }
-        
-        
+
     }//GEN-LAST:event_txtCodProveKeyTyped
 
     private void txtNomProveKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomProveKeyTyped
         Character hl = evt.getKeyChar();
-        
-            if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
-            
+
+        if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
+
             getToolkit().beep();
-           
+
             evt.consume();
-       
+
         }
-        
-        
-        
-        
+
     }//GEN-LAST:event_txtNomProveKeyTyped
 
     private void txtnombEmpresaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombEmpresaKeyTyped
         Character hl = evt.getKeyChar();
-        
-            if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
-            
+
+        if (!Character.isLetter(hl) && hl != KeyEvent.VK_SPACE) {
+
             getToolkit().beep();
-           
+
             evt.consume();
-       
+
         }
     }//GEN-LAST:event_txtnombEmpresaKeyTyped
 
     private void txtTelProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelProveedorKeyTyped
-       
+
         Character hl = evt.getKeyChar();
-        
-            if (!Character.isDigit(hl)) {
-            
+
+        if (!Character.isDigit(hl)) {
+
             getToolkit().beep();
-            
+
             evt.consume();
-        
-}
-        
-        
+
+        }
+
     }//GEN-LAST:event_txtTelProveedorKeyTyped
 
     /**
@@ -343,20 +325,20 @@ public class Proveedor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Proveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Proveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Proveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Proveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Proveedor().setVisible(true);
+                new FrmProveedor().setVisible(true);
             }
         });
     }
@@ -375,9 +357,7 @@ public class Proveedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable tblRegistroProveedor;
     private javax.swing.JTextField txtCodProve;
     private javax.swing.JTextField txtNomProve;
