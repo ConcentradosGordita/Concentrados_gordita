@@ -67,7 +67,7 @@ public class FrmCategoria extends javax.swing.JFrame {
          categoria.setId_categoria(this.txtCodCat.getText().trim());
          categoria.setDescripcion_categoria(this.txtNomCat.getText().trim());
          
-         int resp = JOptionPane.showConfirmDialog(this,"¿Desea modificar este registro del celular?", "Modificar",JOptionPane.YES_NO_OPTION);
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea modificar este registro?", "Modificar",JOptionPane.YES_NO_OPTION);
              if (resp == JOptionPane.OK_OPTION) {
                  String mensaje = control.modificarCategoria(categoria);
                  JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
@@ -86,7 +86,7 @@ public class FrmCategoria extends javax.swing.JFrame {
          categoria.setId_categoria(this.txtCodCat.getText().trim());
          categoria.setDescripcion_categoria(this.txtNomCat.getText().trim());
          
-         int resp = JOptionPane.showConfirmDialog(this,"¿Desea agregar este registro a la tabla celular?", "Agregar",JOptionPane.YES_NO_OPTION);
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea agregar este registro a la tabla?", "Agregar",JOptionPane.YES_NO_OPTION);
              if (resp == JOptionPane.OK_OPTION) {
                  String mensaje = control.agregarCategoria(categoria);
                  JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
@@ -121,14 +121,7 @@ public class FrmCategoria extends javax.swing.JFrame {
                this.txtNomCat.setText("");
                
                
-           /*
-               txtCodigo
-               txtMarca
-               txtModelo
-               cmbCelu
-               txtPrecio
-               
-               */
+           
            
            } 
     @SuppressWarnings("unchecked")

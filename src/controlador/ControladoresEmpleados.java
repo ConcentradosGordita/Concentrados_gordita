@@ -64,16 +64,21 @@ public class ControladoresEmpleados implements OperacionesEmpleados{
     try{
         Class.forName(con.getDriver());
         cn=DriverManager.getConnection(con.getUrl(), con.getUsuario(), con.getClave());
-        sql="update empleados set nombre_emp='"+emp.getNombre_emp()+"',apellido_emp='"+emp.getApellido_emp()
-                +"',cargo_emp='"+emp.getCargo_emp()+"',salario ="+emp.getSalario()
-                +",telefono='"+emp.getTelefono()+"',id_sucursal ="+emp.getId_sucursal()
-                +",nombre_us='"+emp.getNombre_us()+"',cod_us ='"+emp.getCod_us()
-                +"',nivel_us="+emp.getNivel_us()+"where id_empleado="+emp.getId_empleado();
+        sql="update empleados set nombre_emp='"+emp.getNombre_emp()
+                +"',apellido_emp='"+emp.getApellido_emp()
+                +"',cargo_emp='"+emp.getCargo_emp()
+                +"',salario ="+emp.getSalario()
+                +",telefono='"+emp.getTelefono()
+                +"',id_sucursal ="+emp.getId_sucursal()   
+                +",nombre_us='"+emp.getNombre_us()
+                +"',cod_us ='"+emp.getCod_us()
+                +"',nivel_us="+emp.getNivel_us()
+                +"where id_empleado="+emp.getId_empleado();
         pst=cn.prepareStatement(sql);
         pst.execute();
         pst.close();
         cn.close();
-        mensaje= "El  celular se a modificado correctamente";
+        mensaje= "El  Empleado se a modificado correctamente";
         
     }catch(Exception e){
         mensaje= e.toString();     

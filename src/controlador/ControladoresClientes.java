@@ -35,7 +35,7 @@ public class ControladoresClientes implements OperacionesClientes{
         sql="insert into clientes values("+cli.getId_cliente()
                 +",'"+cli.getNombre_cliente()
                 +"','"+cli.getDireccion_cliente()+"','"+cli.getNumero_tarjeta()
-                +"','"+cli.getNombre_cliente()+"')";
+                +"','"+cli.getTelefono_cliente()+"')";
         pst=cn.prepareStatement(sql);
         pst.execute();
         pst.close();
@@ -85,7 +85,7 @@ public class ControladoresClientes implements OperacionesClientes{
     try{
         Class.forName(con.getDriver());
         cn=DriverManager.getConnection(con.getUrl(), con.getUsuario(), con.getClave());
-        sql="delete from clientes where codCelular="+cli.getId_cliente();
+        sql="delete from clientes where id_cliente="+cli.getId_cliente();
         pst=cn.prepareStatement(sql);
         pst.execute(sql);
         pst.close();
