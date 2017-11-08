@@ -143,6 +143,8 @@ public class FrmProveedor extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -169,7 +171,20 @@ public class FrmProveedor extends javax.swing.JFrame {
         jLabel2.setText("Registro Proveedor");
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pro.jpg"))); // NOI18N
-        jButton2.setText("jButton2");
+
+        btnRegresar.setText("Regresar");
+        btnRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegresarMouseClicked(evt);
+            }
+        });
+
+        btnSalir.setText("Salir");
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -178,9 +193,13 @@ public class FrmProveedor extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 497, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 307, Short.MAX_VALUE)
+                .addComponent(btnRegresar)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir)
+                .addGap(151, 151, 151))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,6 +209,12 @@ public class FrmProveedor extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegresar)
+                    .addComponent(btnSalir))
+                .addGap(49, 49, 49))
         );
 
         jPanel1.setBackground(new java.awt.Color(123, 178, 197));
@@ -461,6 +486,16 @@ public class FrmProveedor extends javax.swing.JFrame {
         this.llenarDatos();
     }//GEN-LAST:event_tblRegistroProveedorMouseClicked
 
+    private void btnRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegresarMouseClicked
+        MenuPrincipal verformulario2=new MenuPrincipal();
+        this.setVisible(false);
+        verformulario2.setVisible(true);
+    }//GEN-LAST:event_btnRegresarMouseClicked
+
+    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnSalirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -500,6 +535,8 @@ public class FrmProveedor extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

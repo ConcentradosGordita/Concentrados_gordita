@@ -23,11 +23,14 @@ public class FrmEmpleados extends javax.swing.JFrame {
      * Creates new form FrmEmpleados
      */
     public FrmEmpleados() {
+        
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Empleados");
         this.mostrar();
+        
+        
     }
 
     public void llenarDatos(){
@@ -44,6 +47,7 @@ public class FrmEmpleados extends javax.swing.JFrame {
         this.cbbNivUs.setSelectedItem(String.valueOf(this.tblEmplados.getValueAt(fila, 9)));
     }
     public void mostrar(){
+        
         String[] columnas = {"Codigo","Nombre","Apellido","Cargo","Salario","Telefono","Sucursal","Usuario","Contraseña","Nivel"};
         Object[] obj = new Object[10];
         DefaultTableModel modelo = new DefaultTableModel(null, columnas);
@@ -200,6 +204,8 @@ public class FrmEmpleados extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -541,6 +547,20 @@ public class FrmEmpleados extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(56, 87, 107));
         jLabel11.setText("Cod Sucursal");
 
+        btnRegresar.setText("Regresar");
+        btnRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegresarMouseClicked(evt);
+            }
+        });
+
+        btnSalir.setText("Salir");
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalirMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -552,11 +572,18 @@ public class FrmEmpleados extends javax.swing.JFrame {
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(jLabel12)
-                .addGap(248, 248, 248)
+                .addGap(252, 252, 252)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel10))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegresar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalir)
+                        .addGap(155, 155, 155))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -570,10 +597,17 @@ public class FrmEmpleados extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
-                                .addGap(36, 36, 36)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel11)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel11)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(btnRegresar)
+                                            .addComponent(btnSalir)))))
                             .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -711,6 +745,16 @@ public class FrmEmpleados extends javax.swing.JFrame {
         
     }//GEN-LAST:event_tblEmpladosMouseClicked
 
+    private void btnRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegresarMouseClicked
+        MenuPrincipal verformulario2=new MenuPrincipal();
+                    this.setVisible(false);
+                  verformulario2.setVisible(true);
+    }//GEN-LAST:event_btnRegresarMouseClicked
+
+    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
+        dispose(); 
+    }//GEN-LAST:event_btnSalirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -750,6 +794,8 @@ public class FrmEmpleados extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox cbbCargo;
     private javax.swing.JComboBox cbbCodSucursal;
     private javax.swing.JComboBox cbbNivUs;

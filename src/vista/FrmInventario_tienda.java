@@ -5,7 +5,7 @@
  */
 package vista;
 
-import controlador.ControladoresInventario_tienda;
+    import controlador.ControladoresInventario_tienda;
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -23,7 +23,6 @@ public class FrmInventario_tienda extends javax.swing.JFrame {
      * Creates new form FrmInventario_tienda
      */
     public FrmInventario_tienda() {
-        initComponents();
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -49,7 +48,9 @@ public class FrmInventario_tienda extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel(null, columnas);
         Inventario_tienda inventario= new Inventario_tienda();
         ControladoresInventario_tienda  control = new ControladoresInventario_tienda();
-                ArrayList<Object> lista;
+        
+            
+        ArrayList<Object> lista;
         try {
             
             lista= control.mostrarInventario_tienda();
@@ -68,7 +69,7 @@ public class FrmInventario_tienda extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.toString(),"ERROR", JOptionPane.ERROR_MESSAGE);
         }    
     }
-   
+ 
    public void modificar(){
         Inventario_tienda inventario= new Inventario_tienda();
         ControladoresInventario_tienda control = new ControladoresInventario_tienda();

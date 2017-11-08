@@ -68,12 +68,12 @@ public class ControladoresProducto implements OperacionesProducto{
                 +"',fecha_lab='"+pro.getFecha_lab()
                 +"',fecha_venc ='"+pro.getFecha_venc()
                 +"',cod_barras="+pro.getCod_barras()
-                +"precio_prod="+pro.getPrecio_prod()
+                +",precio_prod="+pro.getPrecio_prod()
                 +",unidades_exsistencias="+pro.getUnidades_exsistencias()
                 +",id_proveedor='"+pro.getId_proveedor()
                 +"',id_categoria ='"+pro.getId_categoria()
                 +"',id_marca="+pro.getId_marca()
-                +"where id_producto="+pro.getId_producto();
+                +" where id_producto = "+pro.getId_producto();
         pst=cn.prepareStatement(sql);
         pst.execute();
         pst.close();

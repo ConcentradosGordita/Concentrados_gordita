@@ -144,6 +144,8 @@ public class FrmTienda extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -200,6 +202,20 @@ public class FrmTienda extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btnRegresar.setText("Regresar");
+        btnRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegresarMouseClicked(evt);
+            }
+        });
+
+        btnSalir.setText("Salir");
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalirMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -207,19 +223,27 @@ public class FrmTienda extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegresar)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir)
+                .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegresar)
+                    .addComponent(btnSalir))
+                .addGap(51, 51, 51))
         );
 
         jPanel1.setBackground(new java.awt.Color(123, 178, 197));
@@ -490,6 +514,16 @@ public class FrmTienda extends javax.swing.JFrame {
         this.llenarDatos();
     }//GEN-LAST:event_tblTiendaMouseClicked
 
+    private void btnRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegresarMouseClicked
+        MenuPrincipal verformulario2=new MenuPrincipal();
+        this.setVisible(false);
+        verformulario2.setVisible(true);
+    }//GEN-LAST:event_btnRegresarMouseClicked
+
+    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnSalirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -529,6 +563,8 @@ public class FrmTienda extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox cbbPaisTienda;
     private javax.swing.JButton jButton12;
     private javax.swing.JLabel jLabel1;
