@@ -86,7 +86,7 @@ public class ControladoresInventario_tienda implements OperacionesInventario_tie
     try{
         Class.forName(con.getDriver());
         cn=DriverManager.getConnection(con.getUrl(), con.getUsuario(), con.getClave());
-        sql="delete from inventario_tienda where codCelular="+iti.getId_producto();
+        sql="delete from inventario_tienda where id_producto="+iti.getId_producto();
         pst=cn.prepareStatement(sql);
         pst.execute(sql);
         pst.close();

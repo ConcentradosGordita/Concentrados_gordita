@@ -5,7 +5,13 @@
  */
 package vista;
 
+import controlador.ControladoresInventario_tienda;
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import modelo.Inventario_tienda;
 
 /**
  *
@@ -22,16 +28,124 @@ public class FrmInventario_tienda extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Inventario");
+        this.mostrar();
     }
-/*
+
    public void llenarDatos(){
         int fila = this.tblInventario.getSelectedRow();
-        this.txtCodigo.setText(String.valueOf(this.tlbDatos.getValueAt(fila, 0)));
-        this.txtMarca.setText(String.valueOf(this.tlbDatos.getValueAt(fila, 1)));
-        this.txtModelo.setText(String.valueOf(this.tlbDatos.getValueAt(fila, 2)));
-        this.cmbCelu.setSelectedItem(String.valueOf(this.tlbDatos.getValueAt(fila, 3)));
-        this.txtPrecio.setText(String.valueOf(this.tlbDatos.getValueAt(fila, 4)));
-    }*/
+        this.txtNomProduc.setText(String.valueOf(this.tblInventario.getValueAt(fila, 0)));
+        this.txtMarcaProd.setText(String.valueOf(this.tblInventario.getValueAt(fila, 1)));
+        this.txtCatProduc.setText(String.valueOf(this.tblInventario.getValueAt(fila, 2)));
+        this.txtCodProducto.setText(String.valueOf(this.tblInventario.getValueAt(fila, 4)));
+        this.txtCodProveedor.setText(String.valueOf(this.tblInventario.getValueAt(fila, 5)));
+        this.txtStock.setText(String.valueOf(this.tblInventario.getValueAt(fila, 6)));
+        
+        
+   }
+   
+   public void mostrar(){
+        String[] columnas = {"Codigo","Marca","Categoria","Codigo Proveedor","Stock"};
+        Object[] obj = new Object[6];
+        DefaultTableModel modelo = new DefaultTableModel(null, columnas);
+        Inventario_tienda inventario= new Inventario_tienda();
+        ControladoresInventario_tienda  control = new ControladoresInventario_tienda();
+                ArrayList<Object> lista;
+        try {
+            
+            lista= control.mostrarInventario_tienda();
+            for(Object objeto :lista){//objeto cambiar por obj si es que no funciona asi 
+            inventario = (Inventario_tienda) objeto;
+            obj[0]= inventario.getNombre_producto();
+            obj[1]= inventario.getMarca_producto();
+            obj[2]= inventario.getCatego_producto();
+            obj[3]= inventario.getId_producto();
+            obj[4]= inventario.getId_proveedor();
+            obj[5]= inventario.getStock();
+            modelo.addRow(obj);
+            }
+            this.tblInventario.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.toString(),"ERROR", JOptionPane.ERROR_MESSAGE);
+        }    
+    }
+   
+   public void modificar(){
+        Inventario_tienda inventario= new Inventario_tienda();
+        ControladoresInventario_tienda control = new ControladoresInventario_tienda();
+        
+         try {
+         
+         inventario.setNombre_producto(this.txtNomProduc.getText().trim());
+         inventario.setMarca_producto(this.txtMarcaProd.getText().trim());
+         inventario.setCatego_producto(this.txtCatProduc.getText().trim());
+         inventario.setId_producto(Integer.parseInt(this.txtCodProducto.getText().trim()));
+         inventario.setId_proveedor(this.txtCodProveedor.getText().trim());
+         inventario.setStock(Integer.parseInt(this.txtStock.getText().trim()));
+         
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea modificar este registro ?", "Modificar",JOptionPane.YES_NO_OPTION);
+             if (resp == JOptionPane.OK_OPTION) {
+                 String mensaje = control.modificarInventario_tienda(inventario);
+                 JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+                 this.mostrar();
+             }
+        } catch (Exception e) {
+       JOptionPane.showMessageDialog(this, e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+         
+    }//final del modificar
+   
+   public void agregar(){
+         Inventario_tienda inventario= new Inventario_tienda();
+         ControladoresInventario_tienda control = new ControladoresInventario_tienda();
+        
+        
+         try {
+         inventario.setNombre_producto(this.txtNomProduc.getText().trim());
+         inventario.setMarca_producto(this.txtMarcaProd.getText().trim());
+         inventario.setCatego_producto(this.txtCatProduc.getText().trim());
+         inventario.setId_producto(Integer.parseInt(this.txtCodProducto.getText().trim()));
+         inventario.setId_proveedor(this.txtCodProveedor.getText().trim());
+         inventario.setStock(Integer.parseInt(this.txtStock.getText().trim()));
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea agregar este registro a la tabla?", "Agregar",JOptionPane.YES_NO_OPTION);
+             if (resp == JOptionPane.OK_OPTION) {
+                 String mensaje = control.agregarInventario_tienda(inventario);
+                 JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+                 this.mostrar();
+             }
+        } catch (Exception e) {
+       JOptionPane.showMessageDialog(this, e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+         
+    }//final del agregar
+   public void eliminar(){
+         Inventario_tienda inventario= new Inventario_tienda();
+         ControladoresInventario_tienda control = new ControladoresInventario_tienda();
+        
+         try {
+         inventario.setId_producto(Integer.parseInt(this.txtCodProducto.getText().trim()));
+         int resp = JOptionPane.showConfirmDialog(this,"¿Desea eliminar este registro?", "Eliminar",JOptionPane.YES_NO_OPTION);
+             if (resp == JOptionPane.OK_OPTION) {
+                 String mensaje = control.eliminarInventario_tienda(inventario);
+                 JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+                 this.mostrar();
+             }
+        } catch (Exception e) {
+       JOptionPane.showMessageDialog(this, e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+         
+    }//final del eliminar
+   public void limpiar(){
+               
+               this.txtCatProduc.setText("");
+               this.txtCodProducto.setText("");
+               this.txtCodProveedor.setText("");
+               this.txtMarcaProd.setText("");
+               this.txtNomProduc.setText("");
+               this.txtStock.setText("");
+               
+          
+           } 
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -139,6 +253,11 @@ public class FrmInventario_tienda extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblInventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblInventarioMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tblInventario);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -183,10 +302,25 @@ public class FrmInventario_tienda extends javax.swing.JFrame {
         jLabel17.setText("Inventario");
 
         btnAgregar.setText("Agregar");
+        btnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarMouseClicked(evt);
+            }
+        });
 
         btnModificar.setText("Modificar");
+        btnModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnModificarMouseClicked(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEliminarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -364,6 +498,28 @@ public class FrmInventario_tienda extends javax.swing.JFrame {
 
             evt.consume();}
     }//GEN-LAST:event_txtStockKeyTyped
+
+    private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
+        this.agregar();
+        this.mostrar();
+        this.limpiar();
+    }//GEN-LAST:event_btnAgregarMouseClicked
+
+    private void btnModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseClicked
+        this.modificar();
+        this.mostrar();
+        this.limpiar();
+    }//GEN-LAST:event_btnModificarMouseClicked
+
+    private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
+        this.eliminar();
+       this.mostrar();
+       this.limpiar();
+    }//GEN-LAST:event_btnEliminarMouseClicked
+
+    private void tblInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblInventarioMouseClicked
+        this.llenarDatos();
+    }//GEN-LAST:event_tblInventarioMouseClicked
 
     /**
      * @param args the command line arguments

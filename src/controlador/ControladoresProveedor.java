@@ -32,7 +32,7 @@ public class ControladoresProveedor implements OperacionesProveedor{
         Class.forName(con.getDriver());
         cn=DriverManager.getConnection(con.getUrl(), con.getUsuario(), con.getClave());
         sql="insert into proveedor values('"+prov.getId_proveedor()
-                +"','"+prov.getNombre_empresa()
+                +"','"+prov.getNombre_proveedor()
                 +"','"+prov.getTelefono_empresa()
                 +"','"+prov.getNombre_empresa()
                 +"')";
