@@ -144,7 +144,7 @@ public class Login extends javax.swing.JFrame {
                     verformulario2.setVisible(true);
                     }else{
                     JOptionPane.showMessageDialog(rootPane, "Acceso concedido ...");
-                    FrmProducto verformulario=new FrmProducto();
+                    Ventas verformulario=new Ventas();
                     this.setVisible(false);
                   verformulario.setVisible(true);
                 }
