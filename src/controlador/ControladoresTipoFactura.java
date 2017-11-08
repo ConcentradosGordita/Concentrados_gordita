@@ -34,9 +34,9 @@ public class ControladoresTipoFactura implements OperacionesTipoFactura{
         sql="insert into tipo_factura values("+tipf.getId_fact()
                 +",'"+tipf.getFecha_fact()
                 +"','"+tipf.getTipo_pago()
-                +","+tipf.getCantidad()
+                +"',"+tipf.getCantidad()
                 +","+tipf.getTotal()
-                +"','"+tipf.getNom_cliente()+"')";
+                +" , '"+tipf.getNom_cliente()+"') ";
         pst=cn.prepareStatement(sql);
         pst.execute();
         pst.close();
