@@ -63,6 +63,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         btnSalir1 = new javax.swing.JButton();
+        btnCerrarSec = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -446,14 +447,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnCerrarSec.setText("Cerrar Sesion");
+        btnCerrarSec.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarSecMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(180, Short.MAX_VALUE)
+                .addContainerGap(156, Short.MAX_VALUE)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(139, 139, 139)
+                .addGap(56, 56, 56)
+                .addComponent(btnCerrarSec)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSalir1)
                 .addContainerGap())
         );
@@ -463,7 +473,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnSalir1))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnSalir1)
+                            .addComponent(btnCerrarSec)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLabel14)))
@@ -536,6 +548,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnSalir1MouseClicked
 
+    private void btnCerrarSecMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSecMouseClicked
+       
+         Login verformulario=new Login();
+                    this.setVisible(false);
+                  verformulario.setVisible(true);
+        
+        
+    }//GEN-LAST:event_btnCerrarSecMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -580,6 +601,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCallProveedor;
     private javax.swing.JButton btnCallTienda;
     private javax.swing.JButton btnCallVentas;
+    private javax.swing.JButton btnCerrarSec;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalir1;
     private javax.swing.JButton jButton3;

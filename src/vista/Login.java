@@ -137,10 +137,17 @@ public class Login extends javax.swing.JFrame {
                 int user_id = 0;
                 while(r.next()){ found=true; user_id = r.getInt("nivel_us"); }
                 if(found){
+                    if(user_id==1){
                     JOptionPane.showMessageDialog(rootPane, "Acceso concedido ...");
                     MenuPrincipal verformulario2=new MenuPrincipal();
                     this.setVisible(false);
                     verformulario2.setVisible(true);
+                    }else{
+                    JOptionPane.showMessageDialog(rootPane, "Acceso concedido ...");
+                    FrmProducto verformulario=new FrmProducto();
+                    this.setVisible(false);
+                  verformulario.setVisible(true);
+                }
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Acceso Denegado!!");
                 }
