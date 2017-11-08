@@ -83,7 +83,7 @@ public class FrmEmpleados extends javax.swing.JFrame {
          empleados.setNombre_emp(this.txtNomEmpleado.getText().trim());
          empleados.setApellido_emp(this.txtApeEmpleado.getText().trim());
          empleados.setCargo_emp(this.cbbCargo.getSelectedItem().toString());
-         empleados.setSalario(Double.parseDouble(this.txtSalario.getText().trim()));
+         empleados.setSalario(Float.parseFloat(this.txtSalario.getText().trim()));
          empleados.setTelefono(this.txtTelEmpleado.getText().trim());
          empleados.setId_sucursal(Integer.parseInt(this.cbbCodSucursal.getSelectedItem().toString()));
          empleados.setNombre_us(this.txtUsuario.getText().trim());

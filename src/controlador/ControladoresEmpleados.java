@@ -73,7 +73,7 @@ public class ControladoresEmpleados implements OperacionesEmpleados{
                 +",nombre_us='"+emp.getNombre_us()
                 +"',cod_us ='"+emp.getCod_us()
                 +"',nivel_us="+emp.getNivel_us()
-                +"where id_empleado="+emp.getId_empleado();
+                +" where id_empleado= "+emp.getId_empleado();
         pst=cn.prepareStatement(sql);
         pst.execute();
         pst.close();

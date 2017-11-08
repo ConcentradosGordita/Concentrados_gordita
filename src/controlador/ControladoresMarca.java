@@ -82,7 +82,7 @@ public class ControladoresMarca implements OperacionesMarca{
     try{
         Class.forName(con.getDriver());
         cn=DriverManager.getConnection(con.getUrl(), con.getUsuario(), con.getClave());
-        sql="delete from id_marca where codCelular="+mrc.getId_marca();
+        sql="delete from marca where id_marca="+mrc.getId_marca();
         pst=cn.prepareStatement(sql);
         pst.execute(sql);
         pst.close();
@@ -108,7 +108,7 @@ public class ControladoresMarca implements OperacionesMarca{
 
             Class.forName(con.getDriver());
             cn = DriverManager.getConnection(con.getUrl(), con.getUsuario(), con.getClave());
-            sql = "select * from celulares";
+            sql = "select * from marca";
             st = cn.createStatement();
             rs = st.executeQuery(sql);
 
