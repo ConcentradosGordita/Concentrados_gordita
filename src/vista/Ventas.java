@@ -177,6 +177,7 @@ public class Ventas extends javax.swing.JFrame {
         tblVentas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(123, 178, 197));
 
